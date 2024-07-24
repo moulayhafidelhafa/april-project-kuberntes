@@ -5,7 +5,7 @@ apiVersion: v1  #v1beta1  v1alpha   v2
 kind: Pod
 metadata:
   namespace: statestreet
-  name: class1
+  name: private
   labels:
     createdBy: "devops"
   annotations:
@@ -14,7 +14,7 @@ spec:
   nodeSelector:
     node.kubernetes.io/instance-type: e2-medium
   containers:
-  - name: class1
+  - name: private
     image: docker.io/nginx:1.14.2
     ports:
     - containerPort: 80
