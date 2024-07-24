@@ -1,0 +1,66 @@
+# Declarative
+
+---
+apiVersion: v1  #v1beta1  v1alpha   v2 
+kind: Pod
+metadata:
+  namespace: statestreet
+  name: class1
+  labels:
+    createdBy: "devops"
+  annotations:
+    github: "https://github.com/Evolve-Cyber-Organization/apr_devops_2024_kubernetes"
+spec:
+  nodeSelector:
+    node.kubernetes.io/instance-type: e2-medium
+  containers:
+  - name: class1
+    image: docker.io/nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+---
+apiVersion: v1  #v1beta1  v1alpha   v2 
+kind: Pod
+metadata:
+  namespace: lincolnstreet
+  name: class1
+  labels:
+    createdBy: "devops"
+  annotations:
+    github: "https://github.com/Evolve-Cyber-Organization/apr_devops_2024_kubernetes"
+spec:
+  nodeSelector:
+    node.kubernetes.io/instance-type: e2-medium
+  containers:
+  - name: class1
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+
+---
+apiVersion: v1  #v1beta1  v1alpha   v2 
+kind: Pod
+metadata:
+  name: private
+  labels:
+    createdBy: "devops"
+  annotations:
+    github: "https://github.com/Evolve-Cyber-Organization/apr_devops_2024_kubernetes"
+spec:
+  imagePullSecrets:      # used to pull private images
+    - name: regcred
+  nodeSelector:
+    node.kubernetes.io/instance-type: e2-medium
+  containers:
+  - name: private
+    image: docker.io/farrukhsadykov/nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+
+
+
+# kubectl apply --force -f pod.yaml
+# kubectl delete -f pod.yaml 
