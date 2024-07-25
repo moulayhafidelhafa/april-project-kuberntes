@@ -2,7 +2,15 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: development
+  name: statestreet
+  labels:
+    createdBy: "devops"
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: chicagostreet
   labels:
     createdBy: "devops"
 
