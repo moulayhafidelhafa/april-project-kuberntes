@@ -5,6 +5,7 @@ metadata:
   name: statestreet
   labels:
     createdBy: "devops"
+    demo: ns
 
 ---
 apiVersion: v1

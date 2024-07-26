@@ -10,7 +10,6 @@ metadata:
     createdBy: "devops"
   annotations:
     github: "https://github.com/moulayhafidelhafa/april-project-kuberntes"
-    
 spec:
   nodeSelector:
     node.kubernetes.io/instance-type: e2-medium
@@ -35,14 +34,30 @@ spec:
     node.kubernetes.io/instance-type: e2-medium
   containers:
   - name: class1
-    image: docker.io/nginx:1.14.2
+    image: nginx:1.14.2
     ports:
     - containerPort: 80
 
 
-
-# kubectl apply --force -f pod.yaml
-# kubectl delete -f pod.yaml 
+---
+apiVersion: v1  #v1beta1  v1alpha   v2 
+kind: Pod
+metadata:
+  name: private
+  labels:
+    createdBy: "devops"
+  annotations:
+    github: "https://github.com/moulayhafidelhafa/april-project-kuberntes"
+spec:
+  imagePullSecrets:      # used to pull private images
+    - name: regcred
+  nodeSelector:
+    node.kubernetes.io/instance-type: e2-medium
+  containers:
+  - name: private
+    image: docker.io/farrukhsadykov/nginx:1.14.2
+    ports:
+    - containerPort: 80
 
 
 
