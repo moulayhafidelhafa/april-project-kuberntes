@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: artemis
-    image: farrukhsadykov/artemis:latest
+    image: elhafahafid/artemis:latest
     ports:
     - containerPort: 5000
     readinessProbe:
