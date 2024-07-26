@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: demo-pod
+  name: demo-pod
+  namespace: default
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: web
+    
+  - image: redis
+    imagePullPolicy: Always
+    name: cache
+
+  - image: jenkins/jenkins
+    imagePullPolicy: Always
+    name: jenkins
+
+# kubectl apply --force -f demo-pod.yaml
+# kubectl delete -f demo-pod.yaml

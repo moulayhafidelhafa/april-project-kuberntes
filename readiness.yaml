@@ -1,0 +1,43 @@
+---
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: class1
+spec:
+  containers:
+  - name: class1
+    image: docker.io/nginx:1.14.2
+    ports:
+    - containerPort: 80
+    readinessProbe:
+      initialDelaySeconds: 60
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 80
+    livenessProbe:
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 80
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
+
+
+
+
+# kubectl apply --force -f readiness.yaml
+# kubectl delete -f readiness.yaml

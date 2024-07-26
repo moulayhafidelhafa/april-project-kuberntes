@@ -1,0 +1,23 @@
+---
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: artemis
+spec:
+  containers:
+  - name: artemis
+    image: farrukhsadykov/artemis:latest
+    ports:
+    - containerPort: 5000
+    readinessProbe:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 5000
+
+# kubectl apply --force -f artemis.yaml
+# kubectl delete -f artemis.yaml

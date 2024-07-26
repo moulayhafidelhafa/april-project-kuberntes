@@ -1,0 +1,45 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: statestreet
+  labels:
+    createdBy: "devops"
+    demo: ns
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pod-limit
+  namespace: statestreet
+spec:
+  hard:
+    pods: "10"
+
+
+
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lincolnstreet
+  labels:
+    createdBy: "devops"
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pod-limit
+  namespace: lincolnstreet
+spec:
+  hard:
+    pods: "10"
+
+
+
+
+# kubectl apply  -f ns.yaml
+# kubectl delete -f ns.yaml 
