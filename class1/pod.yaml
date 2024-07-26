@@ -55,7 +55,7 @@ spec:
     node.kubernetes.io/instance-type: e2-medium
   containers:
   - name: private
-    image: docker.io/farrukhsadykov/nginx:1.14.2
+    image: docker.io/elhafahafid/nginx:1.14.2
     ports:
     - containerPort: 80
 
