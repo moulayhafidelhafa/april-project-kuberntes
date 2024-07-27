@@ -15,7 +15,6 @@ spec:
       timeoutSeconds: 5
       failureThreshold: 6
       successThreshold: 1
-      httpGet: null
       tcpSocket:
         port: 80
 
