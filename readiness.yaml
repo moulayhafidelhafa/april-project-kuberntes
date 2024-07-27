@@ -17,7 +17,6 @@ spec:
       successThreshold: 1
       httpGet: wp-config.php
       tcpSocket:
-        port: 
         port: 80
 
 # kubectl apply --force -f readiness.yaml
