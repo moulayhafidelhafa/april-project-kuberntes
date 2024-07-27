@@ -15,7 +15,7 @@ spec:
       timeoutSeconds: 5
       failureThreshold: 6
       successThreshold: 1
-      httpGet: wp-config.php
+      httpGet: null
       tcpSocket:
         port: 80
 
