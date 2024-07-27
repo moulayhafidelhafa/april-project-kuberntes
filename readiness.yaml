@@ -12,7 +12,7 @@ spec:
     readinessProbe:
       httpGet: 
         path: /
-        port: 81
+        port: 80
 
 # kubectl apply --force -f readiness.yaml
 # kubectl delete -f readiness.yaml
