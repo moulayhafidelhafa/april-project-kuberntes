@@ -10,8 +10,14 @@ spec:
     ports:
     - containerPort: 80
     readinessProbe:
-      httpGet: 
-        path: /
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: wp-config.php
+      tcpSocket:
+        port: 
         port: 80
 
 # kubectl apply --force -f readiness.yaml
