@@ -10,7 +10,7 @@ spec:
     ports:
     - containerPort: 80
     readinessProbe:
-      initialDelaySeconds: 30
+      initialDelaySeconds: 60
       periodSeconds: 10
       timeoutSeconds: 5
       failureThreshold: 6
