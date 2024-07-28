@@ -18,6 +18,14 @@ spec:
       tcpSocket:
         port: 80
 
+    livenessProbe:
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      tcpSocket:
+        port: 80
 
 # kubectl apply --force -f readiness.yaml
 # kubectl delete -f readiness.yaml
