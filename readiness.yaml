@@ -27,5 +27,13 @@ spec:
       tcpSocket:
         port: 80
 
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"        
+
 # kubectl apply --force -f readiness.yaml
 # kubectl delete -f readiness.yaml
