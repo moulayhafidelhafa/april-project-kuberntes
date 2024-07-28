@@ -26,7 +26,6 @@ spec:
       successThreshold: 1
       tcpSocket:
         port: 80
-
     resources:
       requests:
         memory: "64Mi"
