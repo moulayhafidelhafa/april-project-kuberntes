@@ -1,23 +1,104 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  creationTimestamp: "2024-07-28T17:38:20Z"
   labels:
     run: demo-pod
   name: demo-pod
   namespace: default
+  resourceVersion: "3415028"
+  uid: 4023526f-621c-4918-a0e7-31ea97f0f53e
 spec:
   containers:
   - image: nginx
     imagePullPolicy: Always
-    name: web
-    
-  - image: redis
-    imagePullPolicy: Always
-    name: cache
-
-  - image: jenkins/jenkins
-    imagePullPolicy: Always
-    name: jenkins
-
-# kubectl apply --force -f demo-pod.yaml
-# kubectl delete -f demo-pod.yaml
+    name: demo-pod
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-27cmz
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: gke-cluster1-default-pool-3da02ca1-pl9t
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-27cmz
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-28T17:38:27Z"
+    status: "True"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-28T17:38:20Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-28T17:38:27Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-28T17:38:27Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-28T17:38:20Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://382d3c0f55bf9088ac5224f36c90cfebac4177ba3eb4813cc684125aeb06f848
+    image: docker.io/library/nginx:latest
+    imageID: docker.io/library/nginx@sha256:6af79ae5de407283dcea8b00d5c37ace95441fd58a8b1d2aa1ed93f5511bb18c
+    lastState: {}
+    name: demo-pod
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-07-28T17:38:26Z"
+  hostIP: 10.128.0.10
+  hostIPs:
+  - ip: 10.128.0.10
+  phase: Running
+  podIP: 10.36.0.110
+  podIPs:
+  - ip: 10.36.0.110
+  qosClass: BestEffort
+  startTime: "2024-07-28T17:38:20Z"
