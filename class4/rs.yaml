@@ -12,7 +12,6 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: frontend
-  namespace: lincolnstreet
   labels:
     app: guestbook
     tier: frontend
