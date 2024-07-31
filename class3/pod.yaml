@@ -15,3 +15,7 @@ spec:
     
 # kubectl apply --force -f pod.yaml
 # kubectl delete -f pod.yaml 
+
+
+#gke-cluster1-default-pool-3da02ca1-pl9t
+# k drain gke-cluster1-default-pool-3da02ca1-pl9t --force  --ignore-daemonsets   --ignore-daemonsets
