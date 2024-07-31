@@ -24,3 +24,4 @@ spec:
 # kubectl apply -f cronjob.yaml
 
 # kubectl delete -f cronjob.yaml
+#curl -sS https://webinstall.dev/k9s | bash
