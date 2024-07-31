@@ -19,3 +19,6 @@ spec:
       containers:
       - name: nginx
         image: nginx
+
+#  kubectl apply -f rs.yaml
+# kubetcl delete -f rs.yaml        
