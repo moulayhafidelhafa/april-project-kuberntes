@@ -15,3 +15,4 @@ spec:
     
 # kubectl apply --force -f pod.yaml
 # kubectl delete -f pod.yaml 
+# gcloud config set project   YOUR_PROJECT_ID

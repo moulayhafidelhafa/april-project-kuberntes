@@ -1,0 +1,25 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler  # vertical
+metadata:
+  name: frontend
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: frontend
+  minReplicas: 1
+  maxReplicas: 12
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+
+
+# k apply -f hpa.yaml 
+# k delete -f hpa.yaml
+
+#gcloud  container clusters  get-credentials  cluster-1  --zone  us-central1-c
+#gcloud config set project   YOUR_PROJECT_ID
