@@ -1,0 +1,34 @@
+# Dynamic volume provisioning
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: web-content
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: xfs-class
+  resources:
+    requests:
+      storage: 10Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: log-content
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: xfs-class-delete
+  resources:
+    requests:
+      storage: 20Gi
+
+
+# k apply -f pvc.yaml
+# k delete -f pvc.yaml  
+
+# Validate 
+# k get pv 
+# k get pvc

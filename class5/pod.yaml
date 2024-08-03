@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: nginx
+      volumeMounts:
+        - name: my-config
+          mountPath: /etc/config
+  volumes:
+    - name: my-config
+      configMap:
+        name: my-config
+
+
+# k apply -f pod.yaml
+# k delete -f pod.yaml 
