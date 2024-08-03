@@ -58,6 +58,36 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+# k apply -f deploy.yaml 
+# k delete -f deploy.yaml
+# k get deploy
+# k get deploy -o yaml 
+# k describe deploy
+
+
+
+# Downgrading/upgrading 
+
+# See history 
+# k rollout history deploy wordpress 
+# k rollout history deploy wordpress   --revision NUMBER
+
+
+# Carry out roll back
+# k rollout  undo deploy wordpress
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+spec:
+  type: LoadBalancer
+  selector:
+    app: wordpress
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
 
 
 
