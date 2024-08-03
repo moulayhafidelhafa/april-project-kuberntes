@@ -58,3 +58,8 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+
+
+
+      #gcloud  container clusters  get-credentials  cluster-1  --zone  us-central1-c
+      # gcloud config set project 
