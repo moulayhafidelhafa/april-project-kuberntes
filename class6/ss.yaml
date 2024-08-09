@@ -5,7 +5,7 @@ metadata:
   name: web
 spec:
   serviceName: "nginx"
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
