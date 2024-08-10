@@ -92,4 +92,4 @@ spec:
 
 
       #gcloud  container clusters  get-credentials  cluster-1  --zone  us-central1-c
-      # gcloud config set project 
+      # gcloud config set project kubernete1-431415 

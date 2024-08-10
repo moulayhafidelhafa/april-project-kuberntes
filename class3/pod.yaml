@@ -20,4 +20,4 @@ spec:
 #gke-cluster1-default-pool-3da02ca1-pl9t
 # k drain gke-cluster1-default-pool-3da02ca1-pl9t --force  --ignore-daemonsets   --ignore-daemonsets
 #gcloud config set project   kubernetes-class-430414
-#gcloud  container clusters  get-credentials  cluster-1  --zone  us-central1-c
+#gcloud container clusters get-credentials cluster-1 --zone us-central1-c
