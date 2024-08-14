@@ -38,3 +38,8 @@ server:
     # -- Used to maintain session affinity. Supports `ClientIP` and `None`
     ## Ref: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     sessionAffinity: None
+ #
+ # helm install my-argo-cd/argo-cd -f argo_values.yaml
+ # helm upgrade my-argo-cd argo/argo-cd -f argo_values.yaml
+ #  helm uninstall my-argo-cd 
+ #  helm install grafana grafana/grafana   
